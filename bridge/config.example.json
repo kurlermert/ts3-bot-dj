@@ -1,0 +1,10 @@
+{
+  "port": 8765,
+  "bot_name": "MuzikBot",
+  "play_command": "!play",
+  "stop_command": "!stop",
+  "clientquery_host": "127.0.0.1",
+  "clientquery_port": 25639,
+  "api_key": "",
+  "dedupe_seconds": 8
+}

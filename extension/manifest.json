@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "TS3 Bot DJ",
+  "version": "1.0.0",
+  "description": "YouTube / Yandex Music'te calan sarkiyi TS3 muzik botuna !play ile gonderir.",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*",
+    "*://*.youtube.com/*",
+    "*://music.yandex.ru/*",
+    "*://music.yandex.com/*",
+    "*://music.yandex.com.tr/*",
+    "*://music.yandex.kz/*",
+    "*://music.yandex.by/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://music.yandex.ru/*",
+        "*://music.yandex.com/*",
+        "*://music.yandex.com.tr/*",
+        "*://music.yandex.kz/*",
+        "*://music.yandex.by/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_popup": "popup.html", "default_title": "TS3 Bot DJ" },
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "commands": {
+    "send-current": {
+      "suggested_key": { "default": "Alt+Shift+P" },
+      "description": "Calan sarkiyi bota gonder"
+    }
+  }
+}

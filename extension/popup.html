@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg:#14161b; --card:#1d2027; --fg:#e8e9ec; --mut:#8b90a0; --acc:#7c5cff; --ok:#22c55e; --err:#ef4444; }
+  * { box-sizing: border-box; }
+  body { margin:0; width:300px; background:var(--bg); color:var(--fg); font:13px/1.4 "Segoe UI", system-ui, sans-serif; }
+  header { display:flex; align-items:center; gap:8px; padding:12px 14px; border-bottom:1px solid #262a33; }
+  header b { font-size:14px; flex:1; }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--mut); }
+  .dot.ok { background:var(--ok); } .dot.err { background:var(--err); }
+  #status { color:var(--mut); font-size:11px; }
+  main { padding:12px 14px; display:grid; gap:10px; }
+  .track { background:var(--card); border-radius:10px; padding:10px 12px; min-height:56px; }
+  .src { color:var(--acc); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+  .title { font-weight:600; margin-top:2px; word-break:break-word; }
+  .artist { color:var(--mut); }
+  .row { display:flex; gap:8px; }
+  button { flex:1; border:0; border-radius:8px; padding:9px; font:600 13px "Segoe UI", sans-serif; cursor:pointer; }
+  #play { background:var(--acc); color:#fff; }
+  #play:disabled { opacity:.5; cursor:default; }
+  #stop { background:#2a2e38; color:var(--fg); flex:0 0 80px; }
+  label { display:flex; align-items:center; justify-content:space-between; background:var(--card); border-radius:8px; padding:9px 12px; cursor:pointer; }
+  #msg { min-height:16px; font-size:12px; color:var(--mut); word-break:break-all; }
+  #msg.ok { color:var(--ok); } #msg.err { color:var(--err); }
+  .hint { color:var(--mut); font-size:11px; }
+</style>
+</head>
+<body>
+  <header><span class="dot" id="dot"></span><b>TS3 Bot DJ</b><span id="status">...</span></header>
+  <main>
+    <div class="track" id="track"><div class="artist">Çalan şarkı aranıyor...</div></div>
+    <div class="row">
+      <button id="play" disabled>▶ Bota Çal</button>
+      <button id="stop">■ Durdur</button>
+    </div>
+    <label>Şarkı değişince otomatik gönder <input type="checkbox" id="auto"></label>
+    <div id="msg"></div>
+    <div class="hint">Kısayol: Alt+Shift+P</div>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
