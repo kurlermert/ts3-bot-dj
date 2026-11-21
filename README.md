@@ -92,6 +92,10 @@ Ayarı değiştirdikten sonra köprüyü yeniden başlat.
 
 Gönderilen her şarkı `bridge\bridge.log` dosyasına yazılır.
 
+## İlgili proje
+
+- [ts3-screen-share](https://github.com/kurlermert/ts3-screen-share): TeamSpeak 3'e eklenti kurmadan, tarayıcı üzerinden ekran paylaşımı (ServerQuery botu + WebRTC).
+
 ## Lisans
 
 [MIT](LICENSE)
